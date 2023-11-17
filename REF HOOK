@@ -1,0 +1,17 @@
+import { useRef } from "react"
+function RefHook() {
+    const count = useRef(0);
+    const increament = () => {
+        count.current += 1;
+        console.log('current count', count.current)
+    }
+    return (
+        <div>
+            <h2>Welcome...!</h2>
+            <hr />
+            <p>count:{count.current}</p>
+            <button onClick={increament}>increament</button>
+        </div>
+    )
+}
+export default RefHook;
