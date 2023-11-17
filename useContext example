@@ -1,0 +1,28 @@
+// PARENT COMPONENT
+
+import React from "react";
+import ChildComponent from "./useconchild";
+export const MyContext=React.createContext();
+export default function ParentComponent()
+{
+    return(
+        <MyContext.Provider value="Hello World..!">
+            <ChildComponent/>
+        </MyContext.Provider>
+    )
+}
+
+
+//CHILD COMPONENT
+
+import React, { useContext } from "react";
+import { MyContext } from "./useconparent";
+export default function ChildComponent()
+{
+    const vari=useContext(MyContext)
+    return(
+        <div>
+            <h2>{vari}</h2>
+        </div>
+    )
+}
